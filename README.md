@@ -8,7 +8,7 @@ Lampone is a web-based media player that lets you watch TV streams from M3U/M3U8
 
 ### Original creator:
 
-- [Github Repository](https://gitlab.com/lampone/lampone-ui)
+- [Github Repository](https://gitlab.com/lampone-dev/lampone-ui)
 
 ---
 
