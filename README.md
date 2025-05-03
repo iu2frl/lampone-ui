@@ -4,18 +4,17 @@
 
 Lampone is a web-based media player that lets you watch TV streams from M3U/M3U8 playlists directly in your browser. It helps you organize channels by category or country, quickly find what you want to watch, and enjoy a seamless experience with integrated program information (EPG).
 
-
-- [Lampone UI Demo](https://lampone-ui-4243f6.gitlab.io)
-- [Github Repository](https://github.com/jonalinuxdev/lampone)
-
 ![Preview](preview.png)
 
+### Original creator:
+
+- [Github Repository](https://gitlab.com/lampone/lampone-ui)
 
 ---
 
 ## Key Features for Users
 
-- **Load Your Playlists**: Easily add channels by uploading a local M3U/M3U8 file or pasting a remote playlist URL.
+- **Load Your Playlists**: Easily add channels by uploading a local M3U/M3U8 file or pasting a remote playlist URL. (Examples: https://github.com/Free-TV/IPTV/tree/master/playlists)
 - **Remember Your Channels**: Lampone saves your loaded playlists in the browser (Local Storage), so you don’t have to reload them every time.
 - **Organized Channels**: Channels are automatically grouped based on the `group-title` metadata (e.g., country or category), making navigation simple.
 - **Quick Navigation**: Switch between channel groups using the icons/flags in the sidebar and browse the channels in each group.
@@ -29,6 +28,27 @@ Lampone is a web-based media player that lets you watch TV streams from M3U/M3U8
 ---
 
 ## Quick Start
+
+### Docker
+
+1. Create a `docker-compose.yaml` with the following content:
+
+```yaml
+name: lampone-ui
+services:
+  raspservertv:
+    container_name: lampone-ui
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+    ports:
+      - 18080:80
+    image: ghcr.io/iu2frl/lampone-ui
+```
+
+2. Access the UI at `http://ipaddress:18080`
+
+### Manual self-host
 
 1. **Download Lampone**: Ensure you have the HTML and CSS files along with the `js/`, `img/`, and `epg/` folders and their contents.
 2. **Use a Web Server**: For security reasons, Lampone must be served over HTTP. Simply double-clicking `index.html` won’t work.
